@@ -1,20 +1,15 @@
 <?xml version="1.0"?>
-<rss version="2.0">
-    <channel>
-        <title>yuHeng&#39;s blog</title>
-        <link>http://example.com</link>
-        <description></description>
-        <language>zh-CN</language>
-        <pubDate>Fri, 01 Sep 2023 16:14:02 +0800</pubDate>
-        <lastBuildDate>Fri, 01 Sep 2023 16:14:02 +0800</lastBuildDate>
-        <category>redis</category>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/09/01/redis-BigKey%E9%97%AE%E9%A2%98/</guid>
-            <title>redis BigKey问题</title>
-            <link>http://example.com/2023/09/01/redis-BigKey%E9%97%AE%E9%A2%98/</link>
-            <category>redis</category>
-            <pubDate>Fri, 01 Sep 2023 16:14:02 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;redis-bigkey和相关阻塞式问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#redis-bigkey和相关阻塞式问题&#34;&gt;#&lt;/a&gt; Redis BigKey 和相关阻塞式问题&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>yuHeng&#39;s blog • Posts by &#34;redis&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2023-09-01T08:14:02.000Z</updated>
+    <category term="redis" />
+    <entry>
+        <id>http://example.com/2023/09/01/redis-BigKey%E9%97%AE%E9%A2%98/</id>
+        <title>redis BigKey问题</title>
+        <link rel="alternate" href="http://example.com/2023/09/01/redis-BigKey%E9%97%AE%E9%A2%98/"/>
+        <content type="html">&lt;h1 id=&#34;redis-bigkey和相关阻塞式问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#redis-bigkey和相关阻塞式问题&#34;&gt;#&lt;/a&gt; Redis BigKey 和相关阻塞式问题&lt;/h1&gt;
 &lt;h2 id=&#34;1-多大算bigkey&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-多大算bigkey&#34;&gt;#&lt;/a&gt; 1. 多大算 BigKey&lt;/h2&gt;
 &lt;p&gt;根据《阿里云 Redis 开发规范》，string 类型控制在 10kb 以内，hash list set zset 元素个数不要超过 500.&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://img1.imgtp.com/2023/08/30/6RGpzh5o.png&#34; alt=&#34;阿里云Redis开发规范原文&#34;&gt;&lt;/p&gt;
@@ -78,15 +73,15 @@
 &lt;p&gt;In a conclusion, if the value is small,  &lt;code&gt;DEL&lt;/code&gt;  is at least, as good as  &lt;code&gt;UNLINK&lt;/code&gt; . If value is very large, e.g.  &lt;code&gt;LIST&lt;/code&gt;  with thousands or millions of items,  &lt;code&gt;UNLINK&lt;/code&gt;  is much better than  &lt;code&gt;DEL&lt;/code&gt; . You can always safely replace  &lt;code&gt;DEL&lt;/code&gt;  with  &lt;code&gt;UNLINK&lt;/code&gt; . However, if you find the thread synchronization becomes a problem (multi-threading is always a headache), you can rollback to  &lt;code&gt;DEL&lt;/code&gt; .&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Since Redis 6.0, there’s a new configuration: &lt;em&gt;&lt;strong&gt;lazyfree-lazy-user-del&lt;/strong&gt;&lt;/em&gt;. You can set it to be &lt;em&gt;yes&lt;/em&gt;, and Redis will run the  &lt;code&gt;DEL&lt;/code&gt;  command as if running a  &lt;code&gt;UNLINK&lt;/code&gt;  command.&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/09/01/redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E8%BF%98%E6%98%AF%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
-            <title>redis是单线程还是多线程</title>
-            <link>http://example.com/2023/09/01/redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E8%BF%98%E6%98%AF%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
-            <category>redis</category>
-            <pubDate>Fri, 01 Sep 2023 16:12:51 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;redis是单线程还是多线程的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#redis是单线程还是多线程的&#34;&gt;#&lt;/a&gt; Redis 是单线程还是多线程的？&lt;/h1&gt;
+</content>
+        <category term="redis" />
+        <updated>2023-09-01T08:14:02.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2023/09/01/redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E8%BF%98%E6%98%AF%E5%A4%9A%E7%BA%BF%E7%A8%8B/</id>
+        <title>redis是单线程还是多线程</title>
+        <link rel="alternate" href="http://example.com/2023/09/01/redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E8%BF%98%E6%98%AF%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+        <content type="html">&lt;h1 id=&#34;redis是单线程还是多线程的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#redis是单线程还是多线程的&#34;&gt;#&lt;/a&gt; Redis 是单线程还是多线程的？&lt;/h1&gt;
 &lt;h2 id=&#34;1官网解释&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1官网解释&#34;&gt;#&lt;/a&gt; 1. 官网解释&lt;/h2&gt;
 &lt;h3 id=&#34;how-can-redis-use-multiple-cpus-or-cores&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#how-can-redis-use-multiple-cpus-or-cores&#34;&gt;#&lt;/a&gt; How can Redis use multiple CPUs or cores?&lt;/h3&gt;
 &lt;p&gt;It’s not very frequent that CPU becomes your bottleneck with Redis, as usually Redis is either memory or network bound. For instance, when using pipelining a Redis instance running on an average Linux system can deliver 1 million requests per second, so if your application mainly uses O(N) or O(log(N)) commands, it is hardly going to use too much CPU.&lt;/p&gt;
@@ -128,7 +123,8 @@
 &lt;p&gt;Redis 自身出道就是优秀，基于内存操作、数据结构简单、多路复用和非阻塞 I/O、避免了不必要的线程上下文切换等特性，在单线程的环境下依然很快；&lt;/p&gt;
 &lt;p&gt;但对于大数据的 key 删除还是卡顿厉害，因此在 Redis 4.0 引入了多线程 unlink key/flushall async 等命令，主要用于 Redis 数据的异步删除；&lt;/p&gt;
 &lt;p&gt;无论它如何变化，命令的执行依旧是由主线程串行执行的，因此，即使在多线程下操作 Redis 也不会出现线程安全问题。&lt;/p&gt;
- ]]></description>
-        </item>
-    </channel>
-</rss>
+</content>
+        <category term="redis" />
+        <updated>2023-09-01T08:12:51.000Z</updated>
+    </entry>
+</feed>
